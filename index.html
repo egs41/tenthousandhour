@@ -12,7 +12,15 @@
         import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
         const el = document.createElement('pwa-update');
         document.body.appendChild(el);
-    </script>   
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js')
+          .then((reg) => {
+            console.log('서비스 워커가 등록됨.', reg);
+          });
+        }
+      </script>
 </head>
 <body>
     <section id="contents">
